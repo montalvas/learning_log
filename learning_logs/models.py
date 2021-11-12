@@ -13,7 +13,7 @@ class Topic(models.Model):
 
 class Entry(models.Model):
     """Algo específico aprendido sobre um assunto."""
-    topic = models.ForeignKey(Topic)
+    topic = models.ForeignKey("Topic", on_delete=models.PROTECT)
     text = models.TextField()
     date_added = models.DateTimeField(auto_now_add=True)
     
@@ -22,4 +22,7 @@ class Entry(models.Model):
     
     def __str__(self):
         """Retorna até 50 caracteres do conteúdo."""
-        return self.text[:50] + "..."
+        if len(self.text) >= 50:
+            return self.text[:50] + "..."
+        else:
+            return self.text
