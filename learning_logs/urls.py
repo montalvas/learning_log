@@ -13,5 +13,8 @@ urlpatterns = [
     path('topics/', views.topics, name='topics'),
     
     # Página de detalhes de um assunto específico
-    path('topics/<int:topic_id>', views.topic, name='topic')
+    path('topics/<int:topic_id>', views.topic, name='topic'),
+    
+    # Página de cadastro de um novo assunto
+    path('topics/new_topic', views.new_topic, name='new_topic')
 ]
