@@ -61,6 +61,7 @@ def edit_entry(request, entry_id):
     """Renderiza a edição de um registro"""
     entry = Entry.objects.get(id=entry_id)
     topic = entry.topic
+    topic_id = topic.id
     
     if request.method != 'POST':
         # Requisição inicial;
@@ -72,12 +73,10 @@ def edit_entry(request, entry_id):
         form = EntryForm(instance=entry, data=request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect(reverse('learning_logs:topic', args=[topic.id]))
+            return HttpResponseRedirect(reverse('learning_logs:topic', args=[topic_id]))
     
-    context = {'entry:': entry,
-               'topic': topic,
-               'form': form}
+    context = {'entry': entry, 'topic': topic, 'form': form}
     
     return render(request, 'learning_logs/edit_entry.html', context)
-    
+
     
