@@ -9,4 +9,7 @@ urlpatterns = [
     
     # página de logout
     path('logout/', logout_view, name='logout'),
+    
+    # página de cadastro
+    path('register/', register, name='register')
 ]
