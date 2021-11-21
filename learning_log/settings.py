@@ -127,4 +127,10 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Requisições de login
+# Redirecionamento quando em páginas protegidas
+LOGIN_URL = 'users:login'
+
+# Redirecionamento quando autenticado o usuário
 LOGIN_REDIRECT_URL = 'learning_logs:index'
+
