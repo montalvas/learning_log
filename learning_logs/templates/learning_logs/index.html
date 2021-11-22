@@ -1,9 +1,20 @@
 {% extends "learning_logs/_layouts/base.html" %}
 
-{% block content %}
-  <p>Learning Log helps you to keep track of your learning, for any topic
-      you're learning about.
-  </p>
+{% block header %}
+  <div class="jumbotron">
+    <h1>Acompanhe seu aprendizado.</h1>
+    <p>feito por Lucas Montalvani</p>
+  </div>
+{% endblock header %}
 
-  <p>Ass: Lucas Montalvani</p>
+{% block content %}
+  <h2>
+    <a href="{% url 'users:register' %}">Registre uma conta</a>
+    para fazer seu próprio registro de aprendizado, e liste os tópicos sobre
+    os quais você está aprendendo.
+  </h2>
+  <h2>
+    Sempre que você aprender algo novo, faça uma entrada
+    resumindo o que você aprendeu.
+  </h2>
 {% endblock content %}
