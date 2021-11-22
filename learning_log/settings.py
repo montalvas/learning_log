@@ -37,9 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
     # Minhas aplicações
     'learning_logs',
     'users',
+    
+    # Aplicações de terceiros
+    'bootstrap3',
 ]
 
 MIDDLEWARE = [
@@ -133,4 +137,9 @@ LOGIN_URL = 'users:login'
 
 # Redirecionamento quando autenticado o usuário
 LOGIN_REDIRECT_URL = 'learning_logs:index'
+
+# Configurações para o django-bootstrap3
+BOOTSTRAP3 = {
+    'include_jquery': True,
+}
 
