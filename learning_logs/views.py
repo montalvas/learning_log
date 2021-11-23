@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 from .models import Topic, Entry
 from .forms import TopicForm, EntryForm
 
-def check_topic_owner(request):
+def check_topic_owner(topic, request):
     """Garante que o assunto pertence ao usuário atual"""
     if topic.owner != request.user:
         raise Http404
@@ -28,7 +28,7 @@ def topic(request, topic_id):
     """Renderiza um único assunto e todas as suas entradas"""
     topic = Topic.objects.get(id=topic_id)
     
-    check_topic_owner(request) 
+    check_topic_owner(topic, request) 
     
     entries = topic.entry_set.order_by('-date_added')
     context = {'topic': topic,
@@ -80,7 +80,7 @@ def edit_entry(request, entry_id):
     topic = entry.topic
     topic_id = topic.id
     
-    check_topic_owner(request)
+    check_topic_owner(topic, request)
     
     if request.method != 'POST':
         # Requisição inicial;

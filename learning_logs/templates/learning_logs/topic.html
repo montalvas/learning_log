@@ -6,26 +6,27 @@
 
 {% block content %}
 
-  <p>
-    <a href="{% url 'learning_logs:new_entry' topic.id %}">Add novo registro</a>
-  </p>
+<p>
+  <a href="{% url 'learning_logs:new_entry' topic.id %}">Add novo registro</a>
+</p>
 
-  {% for entry in entries %}
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3>
-          {{ entry.date_added|date:'d/M/Y, H:i' }}
-          <small>
-            <a href="{% url 'learning_logs:edit_entry' entry.id %}">Editar registro</a>
-          </small>
-        </h3>
-      </div><!-- panel-heading -->
-      <div class="panel-body">
-        {{ entry.text|linebreaks }}
-      </div><!--panel-body-->
-    </div><!-- panel panel-default -->
-  {% empty %}
-    Não há registro para este tópico ainda.
-  {% endfor %}
+{% for entry in entries %}
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3>
+        {{ entry.date_added|date:'d/m/Y, H:i' }}
+        <small>
+          <a href="{% url 'learning_logs:edit_entry' entry.id %}">Editar registro</a>
+        </small>
+      </h3>
+    </div><!-- panel-heading -->
+    <div class="panel-body">
+      {{ entry.text|linebreaks }}
+    </div><!--panel-body-->
+  </div><!-- panel panel-default -->
+{% empty %}
+  Não há registro para este tópico ainda.
+{% endfor %}
+</ul>
 
 {% endblock content %}
