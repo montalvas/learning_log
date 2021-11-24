@@ -24,9 +24,9 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 SECRET_KEY = 'django-insecure-tsc94+pfc1b3_5xq-91@3hkc=)+-b^7k(14uaq-h9(rk33x23e'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['montalvas-learning-log.herokuapp.com']
 
 
 # Application definition
