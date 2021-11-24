@@ -1,0 +1,2 @@
+Garante que learning_log/static será adicionado ao projeto.
+Nesta pasta serão armazenados os arquivos estáticos.
