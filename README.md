@@ -7,3 +7,6 @@ Uma aplicação web que permite aos usuários registrar os assuntos em que estiv
 ## Funcionalidades:
 <hr>
 Depois que estiver logado, um usuário deve ser capaz de criar novos assuntos e adicionar novas entradas, além de ler e editar entradas existentes.
+
+## Link Heroku:
+[check](https://montalvas-learning-log.herokuapp.com/)
